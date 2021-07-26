@@ -75,7 +75,8 @@ namespace prjDelicious.Controllers
                 //付款完成通知回傳網址(用來呼叫ACTION接收回傳參數,更改資料庫付款狀態)
                 cOpay.ReturnURL = "https://deliciousnet.azurewebsites.net/Opay/Postback";
                 cOpay.ChoosePayment = "Credit";//預設付款方式(規定填入Credit)
-                cOpay.ClientBackURL = "https://deliciousnet.azurewebsites.net/OrderDetail/List?memberid=" + HttpContext.Session.GetString(CDictionary.CURRENT_LOGINED_USERID) + "&status=已付款";
+                cOpay.ClientBackURL = "https://deliciousnet.azurewebsites.net/OrderDetail/List?memberid=" + 
+                    HttpContext.Session.GetString(CDictionary.CURRENT_LOGINED_USERID) + "&status=已付款";
                 cOpay.EncryptType = 1;//CheckMacValue檢查碼在方法內產生並為唯讀
 
                 orders.FirstOrDefault().Order.MerchantTradeNo = cOpay.MerchantTradeNo;//更新該筆資料的編碼

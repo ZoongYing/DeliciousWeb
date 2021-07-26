@@ -22,7 +22,8 @@ namespace prjDelicious.ViewModel
         [DisplayName("帳號")]
         [Required(ErrorMessage = "帳號不可為空白")]
         [StringLength(16, ErrorMessage = "請輸入8~16個中英數字", MinimumLength = 8)]
-        [RegularExpression(@"^(?=.*[a-zA-Z])(?=.*[0-9])((?!\s).)+$", ErrorMessage = "帳號須包含英文字母、數字,不可有空白")]
+        [RegularExpression(@"^(?=.*[a-zA-Z])(?=.*[0-9])((?!\s).)+$", 
+            ErrorMessage = "帳號須包含英文字母、數字,不可有空白")]
         [Remote(action: "VerifyAccount", controller: "MemberValidation")]
         public string AccountName 
         {
@@ -34,7 +35,8 @@ namespace prjDelicious.ViewModel
         [Required(ErrorMessage = "密碼不可為空白")]
         [Compare("Password2", ErrorMessage = "兩次輸入密碼必須相同")]
         [StringLength(16, ErrorMessage = "請輸入8~16個中英數字", MinimumLength = 8)]
-        [RegularExpression(@"^(?=.*[a-zA-Z])(?=.*[0-9])((?!\s).)+$", ErrorMessage = "密碼須包含英文字母、數字,不可有空白")]
+        [RegularExpression(@"^(?=.*[a-zA-Z])(?=.*[0-9])((?!\s).)+$", 
+            ErrorMessage = "密碼須包含英文字母、數字,不可有空白")]
         public string Password1 
         { 
             get { return _member.Password; }

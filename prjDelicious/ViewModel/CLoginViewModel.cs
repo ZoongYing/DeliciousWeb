@@ -40,7 +40,9 @@ namespace prjDelicious.ViewModel
                 password = Csha256.ConvertToSha256(password);
             }
             var member = db.Tmembers.FirstOrDefault(
-                m => (m.AccountName == model.AccountOrEmailOrCell||m.Email == model.AccountOrEmailOrCell||m.CellNumber == model.AccountOrEmailOrCell) &&
+                m => (m.AccountName == model.AccountOrEmailOrCell||
+                m.Email == model.AccountOrEmailOrCell||
+                m.CellNumber == model.AccountOrEmailOrCell) &&
                 m.Password == password);
 
             if (member != null)

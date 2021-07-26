@@ -219,7 +219,8 @@ namespace prjDelicious.Controllers
                              RecipeDescription = l.Recipe.RecipeDescription,
                              season = SeasonSort(l.Recipe.PostTime.Month)
                          } into g
-                         where g.Key.season == "第三季" && g.Key.Year == DateTime.Now.Year && g.Key.DisVisible == false && g.Key.DeleteOrNot == false
+                         where g.Key.season == "第三季" && g.Key.Year == DateTime.Now.Year && g.Key.DisVisible == false 
+                         && g.Key.DeleteOrNot == false
                          select new
                          {
                              g.Key.RecipeName,

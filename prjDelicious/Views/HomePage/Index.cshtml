@@ -67,9 +67,11 @@
             </div>
 
             <div class="recipe-view" id="hotrecipe">
+                <!--Loading圖示-->
                 <div class="spinner-border text-primary" role="status" id="loading1">
                     <span class="sr-only">Loading...</span>
                 </div>
+                <!--ajax載入貼文-->
             </div>
         </div>
     </section>
@@ -91,10 +93,11 @@
             </div>
 
             <div class="recipe-view" id="recipe">
+                <!--Loading圖示-->
                 <div class="spinner-border text-primary" role="status" id="loading2">
                     <span class="sr-only">Loading...</span>
                 </div>
-                <!--ajax讀取-->
+                <!--ajax載入貼文-->
             </div>
         </div>
 </section>
@@ -213,7 +216,7 @@
                 method: "GET",
                 success: function (data) {
                     const carousel = $("#hotrecipe")
-                    recipehtml(data, carousel)
+                    recipehtml(data, carousel)//食譜卡function
                 },
                 complete: function () {
                     $('#loading1').css("display", "none");
@@ -233,7 +236,7 @@
                 method: "GET",
                 success: function (data) {
                     const carousel = $("#recipe")
-                    recipehtml(data, carousel)
+                    recipehtml(data, carousel)//食譜卡function
                     console.log(data)
                 },
                 complete: function () {

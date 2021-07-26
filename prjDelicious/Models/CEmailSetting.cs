@@ -77,7 +77,9 @@ namespace prjDelicious.Models
                 // 使用 BodyBuilder 建立郵件內容
                 BodyBuilder bodyBuilder = new BodyBuilder();
                 // 設定 HTML 內容
-                bodyBuilder.HtmlBody = string.Format(@"<h1>瘋廚網email認證信</h1><span>您的認證碼為:</span><span>{0}</span>", confirm);
+                bodyBuilder.HtmlBody = string.Format(
+                    @"<h1>瘋廚網email認證信</h1><span>您的認證碼為:</span><span>{0}</span>",
+                    confirm);
                 // 設定附件
                 //bodyBuilder.Attachments.Add("檔案路徑");
                 // 設定郵件內容

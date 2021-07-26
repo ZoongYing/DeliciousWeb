@@ -713,6 +713,10 @@
                 },
                 error: function (data) {
                     alert(data);
+                    $(this).attr("class", "btn btn-outline-secondary like");
+                    $(this).children("i").attr("class", "bi bi-heart");
+                    const num = parseInt($(this).children("span").text()) - 1;
+                    $(this).children("span").text(num);
                 }
             })
         })
